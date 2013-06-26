@@ -1,5 +1,3 @@
-c:\users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc\bin\TocToc.dll
-c:\users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc\bin\TocToc.pdb
 c:\users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc\bin\Microsoft.Web.Infrastructure.dll
 c:\users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
 c:\users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc\bin\Newtonsoft.Json.dll
@@ -36,5 +34,7 @@ c:\users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc\bin\pt-br
 c:\users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
 c:\users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc\bin\pt-br\System.Web.WebPages.Razor.resources.dll
 c:\users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc\obj\Debug\TocToc.MVC.csprojResolveAssemblyReference.cache
-c:\users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc\obj\Debug\TocToc.dll
-c:\users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc\obj\Debug\TocToc.pdb
+c:\Users\gferreira\Documents\Visual Studio 2012\Projects\TocToc\TocToc\bin\TocToc.dll
+c:\Users\gferreira\Documents\Visual Studio 2012\Projects\TocToc\TocToc\bin\TocToc.pdb
+c:\Users\gferreira\Documents\Visual Studio 2012\Projects\TocToc\TocToc\obj\Debug\TocToc.dll
+c:\Users\gferreira\Documents\Visual Studio 2012\Projects\TocToc\TocToc\obj\Debug\TocToc.pdb

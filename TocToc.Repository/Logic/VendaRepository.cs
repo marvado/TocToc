@@ -9,24 +9,24 @@ using System.Data.Entity;
 
 namespace TocToc.Repository.Logic
 {
-    public class TipoProdutoRepository : BaseRepository, IRepository<TipoProduto>
+    public class VendaRepository : BaseRepository, IRepository<TipoProduto>
     {
-        public IQueryable<TipoProduto> Obter()
+        public IQueryable<Venda> Obter()
         {
             throw new NotImplementedException();
         }
 
-        public TipoProduto Obter(int id)
+        public Venda Obter(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Alterar(TipoProduto instancia)
+        public void Alterar(Venda instancia)
         {
             throw new NotImplementedException();
         }
 
-        public void Excluir(TipoProduto instancia)
+        public void Excluir(Venda instancia)
         {
             throw new NotImplementedException();
         }

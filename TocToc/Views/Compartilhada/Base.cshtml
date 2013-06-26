@@ -1,0 +1,31 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TocToc - Controle de Cantina</title>
+    <link rel="stylesheet" href="@Url.Content("~/Estatico/bootstrap/css/bootstrap.css")"/>
+    <script type="text/javascript" src="@Url.Content("~/Estatico/bootstrap/js/bootstrap.js")"></script>
+    </head>
+    <body>
+        <br />
+        <div class="container">
+            <div class="span9">
+                <ul class="nav nav-tabs">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Venda</a></li>
+                    <li><a href="#">Produto</a></li>
+                    <li><a href="#">Tipo Produto</a></li>
+                </ul>
+                <div class="span9">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

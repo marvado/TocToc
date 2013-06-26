@@ -44,7 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logic\Class1.cs" />
+    <Compile Include="Logic\Base.cs" />
+    <Compile Include="Logic\UsuarioRepository.cs" />
+    <Compile Include="Logic\VendaRepository.cs" />
+    <Compile Include="Logic\ProdutoRepository.cs" />
+    <Compile Include="Logic\TipoProdutoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
