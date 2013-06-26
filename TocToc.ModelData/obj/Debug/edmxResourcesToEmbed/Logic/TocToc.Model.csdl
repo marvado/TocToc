@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TocTocModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TocTocEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Produtos" EntityType="TocTocModel.Produto" />
+    <EntitySet Name="TipoProdutos" EntityType="TocTocModel.TipoProduto" />
+    <EntitySet Name="Usuarios" EntityType="TocTocModel.Usuario" />
+    <EntitySet Name="Vendas" EntityType="TocTocModel.Venda" />
+    <AssociationSet Name="FK_ProdutoTipoProduto" Association="TocTocModel.FK_ProdutoTipoProduto">
+      <End Role="TipoProdutos" EntitySet="TipoProdutos" />
+      <End Role="Produtos" EntitySet="Produtos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProdutoVenda" Association="TocTocModel.FK_ProdutoVenda">
+      <End Role="Produtos" EntitySet="Produtos" />
+      <End Role="Vendas" EntitySet="Vendas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsuarioVenda" Association="TocTocModel.FK_UsuarioVenda">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Vendas" EntitySet="Vendas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Produto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Valor" Type="Double" Nullable="false" />
+    <Property Name="TipoProdutoId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TipoProduto" Relationship="TocTocModel.FK_ProdutoTipoProduto" FromRole="Produtos" ToRole="TipoProdutos" />
+    <NavigationProperty Name="Vendas" Relationship="TocTocModel.FK_ProdutoVenda" FromRole="Produtos" ToRole="Vendas" />
+  </EntityType>
+  <EntityType Name="TipoProduto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Produtos" Relationship="TocTocModel.FK_ProdutoTipoProduto" FromRole="TipoProdutos" ToRole="Produtos" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Senha" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Vendas" Relationship="TocTocModel.FK_UsuarioVenda" FromRole="Usuarios" ToRole="Vendas" />
+  </EntityType>
+  <EntityType Name="Venda">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Pago" Type="Boolean" Nullable="false" />
+    <Property Name="DataHoraCompra" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Quantidade" Type="Int32" Nullable="false" />
+    <Property Name="ProdutoId" Type="Int32" Nullable="false" />
+    <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Produto" Relationship="TocTocModel.FK_ProdutoVenda" FromRole="Vendas" ToRole="Produtos" />
+    <NavigationProperty Name="Usuario" Relationship="TocTocModel.FK_UsuarioVenda" FromRole="Vendas" ToRole="Usuarios" />
+  </EntityType>
+  <Association Name="FK_ProdutoTipoProduto">
+    <End Role="TipoProdutos" Type="TocTocModel.TipoProduto" Multiplicity="1" />
+    <End Role="Produtos" Type="TocTocModel.Produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoProdutos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Produtos">
+        <PropertyRef Name="TipoProdutoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProdutoVenda">
+    <End Role="Produtos" Type="TocTocModel.Produto" Multiplicity="1" />
+    <End Role="Vendas" Type="TocTocModel.Venda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produtos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vendas">
+        <PropertyRef Name="ProdutoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsuarioVenda">
+    <End Role="Usuarios" Type="TocTocModel.Usuario" Multiplicity="1" />
+    <End Role="Vendas" Type="TocTocModel.Venda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vendas">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

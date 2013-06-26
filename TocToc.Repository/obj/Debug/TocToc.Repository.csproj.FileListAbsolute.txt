@@ -1,0 +1,10 @@
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.Repository\bin\Debug\TocToc.Repository.dll
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.Repository\bin\Debug\TocToc.Repository.pdb
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.Repository\obj\Debug\TocToc.Repository.csprojResolveAssemblyReference.cache
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.Repository\obj\Debug\TocToc.Repository.dll
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.Repository\obj\Debug\TocToc.Repository.pdb
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.Repository\bin\Debug\TocToc.Repository.dll.config
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.Repository\bin\Debug\EntityFramework.dll
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.Repository\bin\Debug\TocToc.ModelData.dll
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.Repository\bin\Debug\TocToc.ModelData.pdb
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.Repository\bin\Debug\EntityFramework.xml

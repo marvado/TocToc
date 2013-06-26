@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TocTocModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="TocTocModelStoreContainer">
+          <EntitySet Name="Produtos" EntityType="TocTocModel.Store.Produtos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TipoProdutos" EntityType="TocTocModel.Store.TipoProdutos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuarios" EntityType="TocTocModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Vendas" EntityType="TocTocModel.Store.Vendas" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_ProdutoTipoProduto" Association="TocTocModel.Store.FK_ProdutoTipoProduto">
+            <End Role="TipoProdutos" EntitySet="TipoProdutos" />
+            <End Role="Produtos" EntitySet="Produtos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProdutoVenda" Association="TocTocModel.Store.FK_ProdutoVenda">
+            <End Role="Produtos" EntitySet="Produtos" />
+            <End Role="Vendas" EntitySet="Vendas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioVenda" Association="TocTocModel.Store.FK_UsuarioVenda">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Vendas" EntitySet="Vendas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Produtos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Valor" Type="float" Nullable="false" />
+          <Property Name="TipoProdutoId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoProdutos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vendas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Pago" Type="bit" Nullable="false" />
+          <Property Name="DataHoraCompra" Type="datetime" Nullable="false" />
+          <Property Name="Quantidade" Type="int" Nullable="false" />
+          <Property Name="ProdutoId" Type="int" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ProdutoTipoProduto">
+          <End Role="TipoProdutos" Type="TocTocModel.Store.TipoProdutos" Multiplicity="1" />
+          <End Role="Produtos" Type="TocTocModel.Store.Produtos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoProdutos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produtos">
+              <PropertyRef Name="TipoProdutoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProdutoVenda">
+          <End Role="Produtos" Type="TocTocModel.Store.Produtos" Multiplicity="1" />
+          <End Role="Vendas" Type="TocTocModel.Store.Vendas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produtos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vendas">
+              <PropertyRef Name="ProdutoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioVenda">
+          <End Role="Usuarios" Type="TocTocModel.Store.Usuarios" Multiplicity="1" />
+          <End Role="Vendas" Type="TocTocModel.Store.Vendas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vendas">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TocTocModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TocTocEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Produtos" EntityType="TocTocModel.Produto" />
+          <EntitySet Name="TipoProdutos" EntityType="TocTocModel.TipoProduto" />
+          <EntitySet Name="Usuarios" EntityType="TocTocModel.Usuario" />
+          <EntitySet Name="Vendas" EntityType="TocTocModel.Venda" />
+          <AssociationSet Name="FK_ProdutoTipoProduto" Association="TocTocModel.FK_ProdutoTipoProduto">
+            <End Role="TipoProdutos" EntitySet="TipoProdutos" />
+            <End Role="Produtos" EntitySet="Produtos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProdutoVenda" Association="TocTocModel.FK_ProdutoVenda">
+            <End Role="Produtos" EntitySet="Produtos" />
+            <End Role="Vendas" EntitySet="Vendas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioVenda" Association="TocTocModel.FK_UsuarioVenda">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Vendas" EntitySet="Vendas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Produto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Valor" Type="Double" Nullable="false" />
+          <Property Name="TipoProdutoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TipoProduto" Relationship="TocTocModel.FK_ProdutoTipoProduto" FromRole="Produtos" ToRole="TipoProdutos" />
+          <NavigationProperty Name="Vendas" Relationship="TocTocModel.FK_ProdutoVenda" FromRole="Produtos" ToRole="Vendas" />
+        </EntityType>
+        <EntityType Name="TipoProduto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Produtos" Relationship="TocTocModel.FK_ProdutoTipoProduto" FromRole="TipoProdutos" ToRole="Produtos" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Senha" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Vendas" Relationship="TocTocModel.FK_UsuarioVenda" FromRole="Usuarios" ToRole="Vendas" />
+        </EntityType>
+        <EntityType Name="Venda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Pago" Type="Boolean" Nullable="false" />
+          <Property Name="DataHoraCompra" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Quantidade" Type="Int32" Nullable="false" />
+          <Property Name="ProdutoId" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Produto" Relationship="TocTocModel.FK_ProdutoVenda" FromRole="Vendas" ToRole="Produtos" />
+          <NavigationProperty Name="Usuario" Relationship="TocTocModel.FK_UsuarioVenda" FromRole="Vendas" ToRole="Usuarios" />
+        </EntityType>
+        <Association Name="FK_ProdutoTipoProduto">
+          <End Role="TipoProdutos" Type="TocTocModel.TipoProduto" Multiplicity="1" />
+          <End Role="Produtos" Type="TocTocModel.Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoProdutos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produtos">
+              <PropertyRef Name="TipoProdutoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProdutoVenda">
+          <End Role="Produtos" Type="TocTocModel.Produto" Multiplicity="1" />
+          <End Role="Vendas" Type="TocTocModel.Venda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produtos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vendas">
+              <PropertyRef Name="ProdutoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioVenda">
+          <End Role="Usuarios" Type="TocTocModel.Usuario" Multiplicity="1" />
+          <End Role="Vendas" Type="TocTocModel.Venda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vendas">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TocTocModelStoreContainer" CdmEntityContainer="TocTocEntities">
+          <EntitySetMapping Name="Produtos">
+            <EntityTypeMapping TypeName="TocTocModel.Produto">
+              <MappingFragment StoreEntitySet="Produtos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="TipoProdutoId" ColumnName="TipoProdutoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoProdutos">
+            <EntityTypeMapping TypeName="TocTocModel.TipoProduto">
+              <MappingFragment StoreEntitySet="TipoProdutos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="TocTocModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vendas">
+            <EntityTypeMapping TypeName="TocTocModel.Venda">
+              <MappingFragment StoreEntitySet="Vendas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Pago" ColumnName="Pago" />
+                <ScalarProperty Name="DataHoraCompra" ColumnName="DataHoraCompra" />
+                <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+                <ScalarProperty Name="ProdutoId" ColumnName="ProdutoId" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,8 @@
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.ModelData\bin\Debug\TocToc.ModelData.dll.config
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.ModelData\bin\Debug\TocToc.ModelData.dll
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.ModelData\bin\Debug\TocToc.ModelData.pdb
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.ModelData\bin\Debug\EntityFramework.dll
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.ModelData\bin\Debug\EntityFramework.xml
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.ModelData\obj\Debug\TocToc.ModelData.csprojResolveAssemblyReference.cache
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.ModelData\obj\Debug\TocToc.ModelData.dll
+c:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.ModelData\obj\Debug\TocToc.ModelData.pdb

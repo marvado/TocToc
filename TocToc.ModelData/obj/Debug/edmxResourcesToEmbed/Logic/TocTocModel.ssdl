@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TocTocModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TocTocModelStoreContainer">
+    <EntitySet Name="Produtos" EntityType="TocTocModel.Store.Produtos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vendas" EntityType="TocTocModel.Store.Vendas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoProdutos" EntityType="TocTocModel.Store.TipoProdutos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuarios" EntityType="TocTocModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ProdutoTipoProduto" Association="TocTocModel.Store.ProdutoTipoProduto">
+      <End Role="Produto" EntitySet="Produtos" />
+      <End Role="TipoProduto" EntitySet="TipoProdutos" />
+    </AssociationSet>
+    <AssociationSet Name="ProdutoVenda" Association="TocTocModel.Store.ProdutoVenda">
+      <End Role="Produto" EntitySet="Produtos" />
+      <End Role="Venda" EntitySet="Vendas" />
+    </AssociationSet>
+    <AssociationSet Name="UsuarioVenda" Association="TocTocModel.Store.UsuarioVenda">
+      <End Role="Usuario" EntitySet="Usuarios" />
+      <End Role="Venda" EntitySet="Vendas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Produtos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Valor" Type="float" Nullable="false" />
+    <Property Name="TipoProdutoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vendas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Pago" Type="bit" Nullable="false" />
+    <Property Name="DataHoraCompra" Type="datetime" Nullable="false" />
+    <Property Name="Quantidade" Type="int" Nullable="false" />
+    <Property Name="ProdutoId" Type="int" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoProdutos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="ProdutoTipoProduto">
+    <End Role="Produto" Type="TocTocModel.Store.Produtos" Multiplicity="*" />
+    <End Role="TipoProduto" Type="TocTocModel.Store.TipoProdutos" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="TipoProduto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Produto">
+        <PropertyRef Name="TipoProdutoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProdutoVenda">
+    <End Role="Produto" Type="TocTocModel.Store.Produtos" Multiplicity="1" />
+    <End Role="Venda" Type="TocTocModel.Store.Vendas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Venda">
+        <PropertyRef Name="ProdutoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsuarioVenda">
+    <End Role="Usuario" Type="TocTocModel.Store.Usuarios" Multiplicity="1" />
+    <End Role="Venda" Type="TocTocModel.Store.Vendas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Venda">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
