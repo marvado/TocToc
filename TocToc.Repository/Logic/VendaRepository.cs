@@ -30,5 +30,30 @@ namespace TocToc.Repository.Logic
         {
             throw new NotImplementedException();
         }
+
+        IQueryable<TipoProduto> IRepository<TipoProduto>.Obter()
+        {
+            throw new NotImplementedException();
+        }
+
+        TipoProduto IRepository<TipoProduto>.Obter(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Incluir(TipoProduto instancia)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Alterar(TipoProduto instancia)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Excluir(TipoProduto instancia)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -11,24 +11,30 @@ namespace TocToc.Repository.Logic
 {
     public class TipoProdutoRepository : BaseRepository, IRepository<TipoProduto>
     {
-        IQueryable<TipoProduto> IRepository<TipoProduto>.Obter()
+        public IQueryable<TipoProduto> Obter()
         {
             throw new NotImplementedException();
         }
 
-        TipoProduto IRepository<TipoProduto>.Obter(int id)
+        public TipoProduto Obter(int id)
         {
             throw new NotImplementedException();
         }
 
-        void IRepository<TipoProduto>.Alterar(TipoProduto instancia)
+        public void Alterar(TipoProduto instancia)
         {
             throw new NotImplementedException();
         }
 
-        void IRepository<TipoProduto>.Excluir(TipoProduto instancia)
+        public void Excluir(TipoProduto instancia)
         {
             throw new NotImplementedException();
+        }
+
+        public void Incluir(TipoProduto instancia)
+        {
+            this.contexto.TipoProdutos.Add(instancia);
+            this.contexto.SaveChanges();
         }
     }
 }

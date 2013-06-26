@@ -30,5 +30,11 @@ namespace TocToc.Repository.Logic
         {
             throw new NotImplementedException();
         }
+
+
+        public void Incluir(Produto instancia)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

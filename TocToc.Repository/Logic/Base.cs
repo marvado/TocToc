@@ -8,7 +8,7 @@ namespace TocToc.Repository.Logic
 {
     public class BaseRepository
     {
-        TocTocEntities contexto;
+        public TocTocEntities contexto;
 
         public BaseRepository()
         {
@@ -20,6 +20,7 @@ namespace TocToc.Repository.Logic
     {
         IQueryable<T> Obter();
         T Obter(int id);
+        void Incluir(T instancia);
         void Alterar(T instancia);
         void Excluir(T instancia);
     }

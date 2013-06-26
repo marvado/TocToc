@@ -30,5 +30,11 @@ namespace TocToc.Repository.Logic
         {
             throw new NotImplementedException();
         }
+
+
+        public void Incluir(Usuario instancia)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
