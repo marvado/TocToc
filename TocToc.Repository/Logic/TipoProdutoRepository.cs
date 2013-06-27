@@ -13,7 +13,13 @@ namespace TocToc.Repository.Logic
     {
         public IQueryable<TipoProduto> Obter()
         {
-            throw new NotImplementedException();
+            return this.contexto.TipoProdutos.AsQueryable();
+        }
+
+        public bool Repetido(string descricao)
+        {
+            return this.Obter().Where(
+                n => descricao == n.Descricao).ToList().Count > 0;
         }
 
         public TipoProduto Obter(int id)

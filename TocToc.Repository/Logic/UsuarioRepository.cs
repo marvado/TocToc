@@ -21,6 +21,11 @@ namespace TocToc.Repository.Logic
             throw new NotImplementedException();
         }
 
+        public Usuario Obter(string usuario, string senha)
+        {
+            return this.contexto.Usuarios.SingleOrDefault(n => n.Nome == usuario && n.Senha == senha);
+        }
+
         public void Alterar(Usuario instancia)
         {
             throw new NotImplementedException();

@@ -14,6 +14,18 @@
     <body>
         <br />
         <div class="container">
+            <div class="offset6 span3">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="span3">@User.Identity.Name</div>
+                        <div class="span1">@Html.ActionLink("Sair", "Logout", "Usuario")</div>
+                    }
+                    else {
+                        @Html.ActionLink("Registrar", "Registrar", "Usuario")
+                        <span> | </span>
+                        @Html.ActionLink("Logar", "Login", "Usuario")
+                    }
+            </div>
             <div class="span9">
                 <ul class="nav nav-tabs">
                     <li><a href="#">Home</a></li>

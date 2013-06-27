@@ -145,7 +145,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Produto\" />
-    <Folder Include="Views\Usuario\" />
     <Folder Include="Views\Venda\" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +159,10 @@
       <Project>{f8ea3661-11d0-4376-bfdb-ab5ab16581b1}</Project>
       <Name>TocToc.Repository</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TocToc.Util\TocToc.Util.csproj">
+      <Project>{7cbf2ca0-0eaa-430a-aecc-abfb48a6ec2b}</Project>
+      <Name>TocToc.Util</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Compartilhada\Base.cshtml" />
@@ -169,6 +172,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\TipoProduto\Cadastrar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Usuario\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoProduto\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,5 @@
+C:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.Util\bin\Debug\TocToc.Util.dll
+C:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.Util\bin\Debug\TocToc.Util.pdb
+C:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.Util\obj\Debug\TocToc.Util.csprojResolveAssemblyReference.cache
+C:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.Util\obj\Debug\TocToc.Util.dll
+C:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc.Util\obj\Debug\TocToc.Util.pdb

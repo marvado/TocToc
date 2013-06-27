@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TocToc.ModelData", "TocToc.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TocToc.Repository", "TocToc.Repository\TocToc.Repository.csproj", "{F8EA3661-11D0-4376-BFDB-AB5AB16581B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TocToc.Util", "TocToc.Util\TocToc.Util.csproj", "{7CBF2CA0-0EAA-430A-AECC-ABFB48A6EC2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{F8EA3661-11D0-4376-BFDB-AB5AB16581B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8EA3661-11D0-4376-BFDB-AB5AB16581B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8EA3661-11D0-4376-BFDB-AB5AB16581B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CBF2CA0-0EAA-430A-AECC-ABFB48A6EC2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CBF2CA0-0EAA-430A-AECC-ABFB48A6EC2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CBF2CA0-0EAA-430A-AECC-ABFB48A6EC2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CBF2CA0-0EAA-430A-AECC-ABFB48A6EC2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

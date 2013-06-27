@@ -1,0 +1,30 @@
+﻿@model TocToc.ModelData.Logic.TipoProduto
+
+@{
+    ViewBag.Title = "Cadastrar";
+    Layout = "~/Views/Compartilhada/Base.cshtml";
+}
+
+<h2>Cadastrar</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Tipo de Produto</legend>
+
+        <div class="editor-label">
+            Descrição
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descricao)
+            @Html.ValidationMessageFor(model => model.Descricao)
+        </div>
+        <button class="btn btn-success" type="submit"><i class="icon-plus"></i> Incluir</button>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

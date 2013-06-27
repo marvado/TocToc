@@ -40,6 +40,5 @@ c:\Users\gferreira\Documents\Visual Studio 2012\Projects\TocToc\TocToc\obj\Debug
 c:\Users\gferreira\Documents\Visual Studio 2012\Projects\TocToc\TocToc\obj\Debug\TocToc.pdb
 c:\Users\gferreira\Documents\Visual Studio 2012\Projects\TocToc\TocToc\bin\TocToc.Repository.dll
 c:\Users\gferreira\Documents\Visual Studio 2012\Projects\TocToc\TocToc\bin\TocToc.Repository.pdb
-c:\Users\gferreira\Documents\Visual Studio 2012\Projects\TocToc\TocToc\bin\Antlr3.Runtime.dll
-c:\Users\gferreira\Documents\Visual Studio 2012\Projects\TocToc\TocToc\bin\System.Web.Optimization.dll
-c:\Users\gferreira\Documents\Visual Studio 2012\Projects\TocToc\TocToc\bin\WebGrease.dll
+C:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc\bin\TocToc.Util.dll
+C:\Users\gferreira\documents\visual studio 2012\Projects\TocToc\TocToc\bin\TocToc.Util.pdb

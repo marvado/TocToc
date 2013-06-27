@@ -11,24 +11,35 @@ namespace TocToc.Controllers
     public class TipoProdutoController : Controller
     {
         TipoProdutoRepository repoTipoProduto;
-        public ActionResult Index()
+        public TipoProdutoController()
         {
             repoTipoProduto = new TipoProdutoRepository();
-            return View();
+        }
+        public ActionResult Index()
+        {
+            return View(repoTipoProduto.Obter());
         }
 
-        public ActionResult Cadastrar()
+        public ActionResult Incluir()
         {
             return View();
         }
 
+        [Authorize]
         [HttpPost]
-        public ActionResult Cadastrar(TipoProduto instancia)
+        public ActionResult Incluir(TipoProduto instancia)
         {
             if (ModelState.IsValid)
             {
-                repoTipoProduto.Incluir(instancia);
-                return RedirectToAction("Index");
+                if (!repoTipoProduto.Repetido(instancia.Descricao))
+                {
+                    repoTipoProduto.Incluir(instancia);
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Descrição já existente");
+                }
             }
             return View(instancia);
         }
